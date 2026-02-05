@@ -18,10 +18,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from prueba.views import index, notas
+from prueba.views import index, notas, tirar_dado
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("prueba/", index),
     path("notas/", notas),
+    path("tirar-dado/", tirar_dado),
 ]
