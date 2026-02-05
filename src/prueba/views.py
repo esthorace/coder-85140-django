@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from . import models
+
 
 def index(request):
     datos = {
@@ -31,3 +33,8 @@ def tirar_dado(request):
         "fecha": datetime.now().strftime("%H:%M:%S.%f"),
     }
     return render(request, "prueba/dados.html", context=datos)
+
+
+def clientes_listar(request):
+    clientes = models.Cliente.objects.all()
+    return render(render, "prueba/clientes.html", context={"clientes": clientes})
