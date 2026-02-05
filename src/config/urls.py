@@ -18,9 +18,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from prueba.views import index
+from prueba.views import index, notas
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("prueba/", index),
+    path("notas/", notas),
 ]
