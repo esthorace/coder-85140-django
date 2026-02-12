@@ -4,7 +4,9 @@
     <h2>Crear país</h2>
     <form method="post">
         {% csrf_token %}
-        {{ form }}
+        <table>
+            {{ form.as_table }}
+        </table>
         <button type="submit">Guardar</button>
     </form>
 {% endblock contenido %}

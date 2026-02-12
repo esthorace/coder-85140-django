@@ -42,7 +42,11 @@ def clientes_listar(request):
 
 
 def paises_listar(request):
-    paises = models.Pais.objects.all()
+    consulta = request.GET.get("consulta")
+    if consulta:
+        paises = models.Pais.objects.filter(nombre__contains=consulta)
+    else:
+        paises = models.Pais.objects.all()
     return render(request, "prueba/paises.html", context={"paises": paises})
 
 

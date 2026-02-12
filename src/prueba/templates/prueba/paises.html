@@ -1,12 +1,19 @@
 {% extends 'prueba/base.html' %}
 
 {% block contenido %}
+
 <h1>Países</h1>
 <button><a href="{% url 'paises_crear' %}">Crear</a></button>
+
+<form method="get">
+    <input type="text" name="consulta" placeholder="Buscar...">
+    <button type="submit">Buscar</button>
+</form>
+
 <ul>
     {% for pais in paises %}
         <li>{{ pais.nombre }}</li>
     {% endfor %}
-
 </ul>
+
 {% endblock contenido %}
