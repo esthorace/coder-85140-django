@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Clientes</h1>
-    <ul>
-        {% for cliente in clientes %}
-            <li>{{ cliente.nombre }} {{ cliente.apellido }}</li>
-        {% endfor %}
+{% extends 'prueba/base.html' %}
 
-    </ul>
-</body>
-</html>
+{% block contenido %}
+<h1>Clientes</h1>
+<ul>
+    {% for cliente in clientes %}
+    <li>{{ cliente.nombre }} {{ cliente.apellido }}</li>
+    {% endfor %}
+
+</ul>
+{% endblock contenido %}

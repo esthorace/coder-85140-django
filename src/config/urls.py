@@ -22,8 +22,8 @@ from prueba.views import clientes_listar, index, notas, tirar_dado
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("prueba/", index),
-    path("notas/", notas),
-    path("tirar-dado/", tirar_dado),
-    path("clientes/", clientes_listar),
+    path("", index, name="index"),
+    path("notas/", notas, name="notas"),
+    path("tirar-dado/", tirar_dado, name="dados"),
+    path("clientes/", clientes_listar, name="clientes_listar"),
 ]
