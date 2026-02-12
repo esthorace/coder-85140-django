@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from . import models
+from .forms import PaisForm
 
 
 def index(request):
@@ -37,4 +38,20 @@ def tirar_dado(request):
 
 def clientes_listar(request):
     clientes = models.Cliente.objects.all()
-    return render(render, "prueba/clientes.html", context={"clientes": clientes})
+    return render(request, "prueba/clientes.html", context={"clientes": clientes})
+
+
+def paises_listar(request):
+    paises = models.Pais.objects.all()
+    return render(request, "prueba/paises.html", context={"paises": paises})
+
+
+def paises_crear(request):
+    if request.method == "POST":
+        form = PaisForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("paises_listar")
+    else:
+        form = PaisForm()
+    return render(request, "prueba/paises_crear.html", {"form": form})

@@ -18,7 +18,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from prueba.views import clientes_listar, index, notas, tirar_dado
+from prueba.views import (
+    clientes_listar,
+    index,
+    notas,
+    paises_crear,
+    paises_listar,
+    tirar_dado,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -26,4 +33,6 @@ urlpatterns = [
     path("notas/", notas, name="notas"),
     path("tirar-dado/", tirar_dado, name="dados"),
     path("clientes/", clientes_listar, name="clientes_listar"),
+    path("paises/", paises_listar, name="paises_listar"),
+    path("paises/crear/", paises_crear, name="paises_crear"),
 ]
