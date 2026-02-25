@@ -7,6 +7,7 @@ class Pais(models.Model):
     nombre = models.CharField(
         max_length=100, unique=True, verbose_name="Nombre del país"
     )
+    descripcion = models.TextField(verbose_name="Descripción", null=True, blank=True)
 
     def __str__(self) -> str:
         return self.nombre

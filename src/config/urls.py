@@ -33,6 +33,7 @@ urlpatterns = [
     path("notas/", notas, name="notas"),
     path("tirar-dado/", tirar_dado, name="dados"),
     path("clientes/", clientes_listar, name="clientes_listar"),
+    # punto de prueba
     path("paises/", paises_listar, name="paises_listar"),
     path("paises/crear/", paises_crear, name="paises_crear"),
 ]
