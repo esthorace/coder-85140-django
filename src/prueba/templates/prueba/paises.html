@@ -15,7 +15,7 @@
         <li>{{ pais.id }} {{ pais.nombre }} 
             <a href="{% url 'paises_ver' pais.id %}">Ver</a>
             <a href="{% url 'paises_editar' pais.id %}">Editar</a>
-            <a href="#">Eliminar</a>
+            <a href="{% url 'paises_borrar' pais.id %}">Borrar</a>
         </li>
     {% endfor %}
 </ul>

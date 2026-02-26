@@ -26,7 +26,8 @@ from prueba.views import (
     paises_listar,
     tirar_dado,
     paises_ver,
-    paises_editar
+    paises_editar,
+    paises_borrar
 )
 
 urlpatterns = [
@@ -40,4 +41,5 @@ urlpatterns = [
     path("paises/crear/", paises_crear, name="paises_crear"),
     path("paises/ver/<int:pk>", paises_ver, name="paises_ver"),
     path("paises/editar/<int:pk>", paises_editar, name="paises_editar"),
+    path("paises/borrar/<int:pk>", paises_borrar, name="paises_borrar"),
 ]

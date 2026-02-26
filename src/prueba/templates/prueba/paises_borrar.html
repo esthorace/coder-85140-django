@@ -1,0 +1,10 @@
+{% extends 'prueba/base.html' %}
+
+{% block contenido %}
+    <h2>Borrar país</h2>
+    <p>¿Estás seguro de borrar el país "{{ pais.nombre }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmo</button>
+    </form>
+{% endblock contenido %}

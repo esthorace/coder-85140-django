@@ -76,3 +76,10 @@ def paises_editar(request, pk: int):
     else:
         form = PaisForm(instance=pais)
     return render(request, "prueba/paises_crear.html", {"form": form})
+
+def paises_borrar(request, pk:int):
+    pais = models.Pais.objects.get(id=pk)
+    if request.method == "POST":
+        pais.delete()
+        return redirect("paises_listar")
+    return render(request, "prueba/paises_borrar.html", {"pais": pais})
