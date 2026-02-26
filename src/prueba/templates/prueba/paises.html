@@ -12,7 +12,11 @@
 
 <ul>
     {% for pais in paises %}
-        <li>{{ pais.nombre }}</li>
+        <li>{{ pais.id }} {{ pais.nombre }} 
+            <a href="{% url 'paises_ver' pais.id %}">Ver</a>
+            <a href="#">Editar</a>
+            <a href="#">Eliminar</a>
+        </li>
     {% endfor %}
 </ul>
 

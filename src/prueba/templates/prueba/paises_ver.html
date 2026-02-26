@@ -1,0 +1,14 @@
+{% extends 'prueba/base.html' %}
+
+{% block contenido %}
+    <h2>Ver país</h2>
+    <ul>
+        <li><strong>Nombre:</strong> {{ pais.nombre }}</li>
+        
+        {% if pais.descripcion %}
+            <li><strong>Descripción:</strong> {{ pais.descripcion }}</li>
+        {% else %}
+            <li><strong>Descripción:</strong> - </li>
+        {% endif %}
+    </ul>
+{% endblock contenido %}
