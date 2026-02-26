@@ -63,3 +63,16 @@ def paises_crear(request):
 def paises_ver(request, pk: int):
     pais = models.Pais.objects.get(id=pk)
     return render(request, "prueba/paises_ver.html", {"pais": pais})
+
+
+def paises_editar(request, pk: int):
+    pais = models.Pais.objects.get(id=pk)
+
+    if request.method == "POST":
+        form = PaisForm(request.POST, instance=pais)
+        if form.is_valid():
+            form.save()
+            return redirect("paises_listar")
+    else:
+        form = PaisForm(instance=pais)
+    return render(request, "prueba/paises_crear.html", {"form": form})
