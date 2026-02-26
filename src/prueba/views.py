@@ -79,7 +79,7 @@ class PaisList(ListView):
 class PaisCreate(CreateView):
     model = models.Pais
     form_class = PaisForm
-    success_url = reverse_lazy("paises_listar")
+    success_url = reverse_lazy("pais_list")
 
 
 # def paises_ver(request, pk: int):
@@ -107,7 +107,7 @@ class PaisDetail(DetailView):
 class PaisUpdate(UpdateView):
     model = models.Pais
     form_class = PaisForm
-    success_url = reverse_lazy("paises_listar")
+    success_url = reverse_lazy("pais_list")
 
 
 # def paises_borrar(request, pk: int):
@@ -119,4 +119,4 @@ class PaisUpdate(UpdateView):
 
 class PaisDelete(DeleteView):
     model = models.Pais
-    success_url = reverse_lazy("paises_listar")
+    success_url = reverse_lazy("pais_list")

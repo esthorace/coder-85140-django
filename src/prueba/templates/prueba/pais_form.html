@@ -1,7 +1,14 @@
 {% extends 'prueba/base.html' %}
 
 {% block contenido %}
-    <h2>Crear país</h2>
+    <h2>
+        {% if form.instance.pk is None %}
+            Crear país
+        {% else %}
+            Editar País
+        {% endif %}
+    </h2>
+    
     <form method="post">
         {% csrf_token %}
         <table>

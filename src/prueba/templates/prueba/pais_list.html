@@ -3,7 +3,7 @@
 {% block contenido %}
 
 <h1>Países</h1>
-<button><a href="{% url 'paises_crear' %}">Crear</a></button>
+<button><a href="{% url 'pais_create' %}">Crear</a></button>
 
 <form method="get">
     <input type="text" name="consulta" placeholder="Buscar...">
@@ -13,9 +13,9 @@
 <ul>
     {% for pais in object_list %}
         <li>{{ pais.nombre }} 
-            <a href="{% url 'paises_ver' pais.id %}">Ver</a>
-            <a href="{% url 'paises_editar' pais.id %}">Editar</a>
-            <a href="{% url 'paises_borrar' pais.id %}">Borrar</a>
+            <a href="{% url 'pais_detail' pais.id %}">Ver</a>
+            <a href="{% url 'pais_update' pais.id %}">Editar</a>
+            <a href="{% url 'pais_delete' pais.id %}">Borrar</a>
         </li>
     {% empty %}
         <li>No hay registros.</li>
