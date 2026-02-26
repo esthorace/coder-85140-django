@@ -22,12 +22,17 @@ from prueba.views import (
     clientes_listar,
     index,
     notas,
-    paises_crear,
-    paises_listar,
+    # paises_crear,
+    # paises_listar,
     tirar_dado,
-    paises_ver,
-    paises_editar,
-    paises_borrar
+    # paises_ver,
+    # paises_editar,
+    # paises_borrar,
+    PaisList,
+    PaisCreate,
+    PaisDetail,
+    PaisUpdate,
+    PaisDelete
 )
 
 urlpatterns = [
@@ -37,9 +42,13 @@ urlpatterns = [
     path("tirar-dado/", tirar_dado, name="dados"),
     path("clientes/", clientes_listar, name="clientes_listar"),
     # punto de prueba
-    path("paises/", paises_listar, name="paises_listar"),
-    path("paises/crear/", paises_crear, name="paises_crear"),
-    path("paises/ver/<int:pk>", paises_ver, name="paises_ver"),
-    path("paises/editar/<int:pk>", paises_editar, name="paises_editar"),
-    path("paises/borrar/<int:pk>", paises_borrar, name="paises_borrar"),
+    # path("paises/", paises_listar, name="paises_listar"),
+    # path("paises/crear/", paises_crear, name="paises_crear"),
+    # path("paises/ver/<int:pk>", paises_ver, name="paises_ver"),
+    # path("paises/editar/<int:pk>", paises_editar, name="paises_editar"),
+    path("paises/", PaisList.as_view(), name="paises_listar"),
+    path("paises/crear/", PaisCreate.as_view(), name="paises_crear"),
+    path("paises/ver/<int:pk>", PaisDetail.as_view(), name="paises_ver"),
+    path("paises/editar/<int:pk>", PaisUpdate.as_view(), name="paises_editar"),
+    path("paises/borrar/<int:pk>", PaisDelete.as_view(), name="paises_borrar"),
 ]

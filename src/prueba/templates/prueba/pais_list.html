@@ -11,12 +11,14 @@
 </form>
 
 <ul>
-    {% for pais in paises %}
-        <li>{{ pais.id }} {{ pais.nombre }} 
+    {% for pais in object_list %}
+        <li>{{ pais.nombre }} 
             <a href="{% url 'paises_ver' pais.id %}">Ver</a>
             <a href="{% url 'paises_editar' pais.id %}">Editar</a>
             <a href="{% url 'paises_borrar' pais.id %}">Borrar</a>
         </li>
+    {% empty %}
+        <li>No hay registros.</li>
     {% endfor %}
 </ul>
 
